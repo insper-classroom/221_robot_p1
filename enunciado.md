@@ -42,30 +42,39 @@ Existe algumas dicas de referência rápida de setup [instrucoes_setup.md](instr
 Se você tiver alguma evidência de fraude cometida nesta prova, [use este serviço de e-mail anônimo](https://www.guerrillamail.com/pt/compose)  para informar ao professor através do e-mail `antoniohps1@insper.edu.br`.
 
 
-
 # Questões
 
 
 ## Questão 1  (2.50 pontos)
 
 
-Nononononon
+Nesta questão você irá determinar se o personagem do jogo "Deep Space Warriors" foi atingido por um meteoro. Como o jogo possui 3 dimensões, você deverá checar se os retângulos envolventes (*bounding boxes*) do personagem e do meteoro se interceptam, e se a diferença entre as profundidades deles é menor do que 40 cm. Por profundidade de um objeto entende-se a distância do mesmo até a câmera virtual que gera a imagem do jogo.
 
-*Exemplo de situação onde o canhão acertou a nave*
+As imagens `green_lama.png` e `meteoro.png` correspondem às imagens vistas do personagem e do meteoro se ambos estiverem a uma profundidade de 60 cm. A altura do personagem (comprimento na vertical) é de 180 cm, e do meteoro é de 111.3 cm.
 
-Estado do jogo (imagem de entrada)
-![](alien_exemplo.png)
+![](./q1/green_lama.png)
+![](./q1/meteoro.png)
 
-Como deve ficar a tela (imagem de saída)
-![](alien_exemplo_acertou.png)
+
+### O que você deverá fazer
+
+Você deverá editar a função `meteoro_acertou()` que irá determinar se o meteoro acertou ou não o personagem. Você não deve se preocupar com as situações em que o personagem encobre totalmente o meteoro ou vice-e-versa, preocupe-se apenas quando ambos os objetos são visíveis
+
+A saída esperada é a imagem com as bounding boxes, o texto `ACERTOU`escrito na imagem no caso do meteoro ter acertado o personagem, e as profundidades (distâncias) dos objetos escritas no terminal.
+
+*Exemplo de situação onde o meteoro acertou o personagem*
+Não precisa escrever os dizeres na imagem, apenas `ACERTOU`
+![](./acertou.png)
+
+
+*Exemplo de situação onde o meteoro não acertou o personagem*
+Não precisa escrever os dizeres na imagem
+![](./nao_acertou.png)
 
 
 #### Orientações
 
-Trabalhe no arquivo `q1/q1.py`. Este exercício **não precisa** de ROS. Portanto pode ser feito até em Mac ou Windows
-
-Você vai notar que este programa roda o vídeo `lasercannon.mp4`. Baixe o vídeo [neste endereço](https://drive.google.com/file/d/1n7JRLZzbN8YZDxTZS0tli8v_RpNzZUAc/view?usp=sharing), dentro da pasta `q1/`.
-
+Trabalhe no arquivo `./q1/q1.py`. Este exercício **não precisa** de ROS. Portanto pode ser feito até em Mac ou Windows
 
 #### O que você deve fazer:
 
@@ -73,25 +82,24 @@ Você vai notar que este programa roda o vídeo `lasercannon.mp4`. Baixe o víde
 |Resultado| Conceito| 
 |---|---|
 | Não executa | zero |
-| Segmenta ou filtra a imagem baseado em cores ou canais da imagem e produz output visual| 0.6|
-| Identifica o ponto de confluência corretamente, com output bem claro OU identifica que a nave atinge a altura perigosa| 1.3|
-| Identifica ambas as situações acima| 2.1 |
-| Identifica as três situações pedidas no enunciado, mas não está perfeito | 2.8 |
-| Resultados perfeitos | 3.33|
+| Determina a distância focal da câmera virtual | 0.6|
+| Segmenta o personagem e o meteoro (separadamente), mostrando eidências | 1.3|
+| Identifica as profundidades dos objetos e escreve no terminal | 2.1 |
+| Identifica corretamente a collisão entre os objetos | 2.5 |
 
 
 Casos intermediários ou omissos da rubrica serão decididos pelo professor.
 
 ## Questão 2  (2.50 pontos)
 
-Nonononono
+Você deverá desenvolver o código para identificar e desenhar as arestas e os vértices de um quadrado, usando cores diferentes para cada aresta e cada vértice. Quando o quadrado tiver arestas na vertical, não é necessário fazer a identificação.
 
 
 #### Orientações
 
 Trabalhe no arquivo `q2/q2.py`. Este exercício **não precisa** de ROS. Portanto pode ser feito até em Mac ou Windows
 
-Você vai notar que este programa roda o vídeo `dogtraining.mp4`. Baixe o vídeo [neste endereço](https://drive.google.com/file/d/10v0lrUtciTE7HNeO2WSE4ug9HafpQvHP/view?usp=sharing), dentro da pasta `q1/`.
+Você vai notar que este programa roda o vídeo `quadrado.mp4`. Baixe o vídeo [neste endereço](https://drive.google.com/file/d/10v0lrUtciTE7HNeO2WSE4ug9HafpQvHP/view?usp=sharing), dentro da pasta `q1/`.
 
 
 #### O que você deve fazer:
@@ -100,12 +108,10 @@ Você vai notar que este programa roda o vídeo `dogtraining.mp4`. Baixe o víde
 |Resultado| Conceito| 
 |---|---|
 | Não executa | zero |
-| Identifica o cachorro OU a bola, marcando claramente na imagem| 0.6|
-| Identifica o cachorro E a bola, marcando claramente na imagem| 1.5|
-| Identifica o cachorro E mede a distância percorrida| 1.5|
-| Identifica o cachorro e a bola e mede a distância percorrida| 2.4 |
-| Faz tudo o que se pede no enunciado, mas não está perfeito | 2.8 |
-| Resultados perfeitos | 3.33|
+| Segmenta as linhas e mostra saída visual | 1.0|
+| Identifica as retas das arestas do quadrado e apresenta saída visual das mesmas| 1.5|
+| Distingue cada uma retas, usando cores diferentes para desenhá-las | 2.0|
+| Apresenta os vértices do quadrado | 2.5 |
 
 
 Casos intermediários ou omissos da rubrica serão decididos pelo professor.
@@ -121,15 +127,17 @@ Exemplo de imagem de saida
 
 ## Questão 3  (2.50 pontos)
 
-Nonononono
+Nesta questão você deverá fazer um retângulo em volta de todas as bandeiras do Brasil.
+Não poderá ser usada a informação da posição das mesmas, apenas as cores.
+
+![](./q3/bandeiras.png)
+
+Observe que há bandeiras com cores semelhantes, porém apenas a do Brasil possui figuras com cores distintas uma dentro da outra.
 
 
 #### Orientações
 
 Trabalhe no arquivo `q3/q3.py`. Este exercício **não precisa** de ROS. Portanto pode ser feito até em Mac ou Windows
-
-Você vai notar que este programa roda o vídeo `dogtraining.mp4`. Baixe o vídeo [neste endereço](https://drive.google.com/file/d/10v0lrUtciTE7HNeO2WSE4ug9HafpQvHP/view?usp=sharing), dentro da pasta `q1/`.
-
 
 #### O que você deve fazer:
 
@@ -137,24 +145,13 @@ Você vai notar que este programa roda o vídeo `dogtraining.mp4`. Baixe o víde
 |Resultado| Conceito| 
 |---|---|
 | Não executa | zero |
-| Identifica o cachorro OU a bola, marcando claramente na imagem| 0.6|
-| Identifica o cachorro E a bola, marcando claramente na imagem| 1.5|
-| Identifica o cachorro E mede a distância percorrida| 1.5|
-| Identifica o cachorro e a bola e mede a distância percorrida| 2.4 |
-| Faz tudo o que se pede no enunciado, mas não está perfeito | 2.8 |
-| Resultados perfeitos | 3.33|
-
+| Segmenta a cor verde e gera saída visual |0.6|
+| Identifica pelo menos uma bandeira do Brasil | 1.0|
+| Identifica todas as bandeira do Brasil e até duas outras | 1.5|
+| Identifica todas as bandeira do Brasil e apenas uma outra | 2.0|
+| Identifica todas e apenas as bandeiras do Brasil| 2.5 |
 
 Casos intermediários ou omissos da rubrica serão decididos pelo professor.
-
-*Exemplo do que deve ser feito*
-
-Exemplo de imagem de entrada
-![](cao_exemplo.png)
-
-Exemplo de imagem de saida
-![](cao_exemplo_detecta.png)
-
 
 ## Questões de ROS
 
@@ -195,7 +192,7 @@ Em seguida faça o [catkin_make](./instrucoes_setup.md).
 
 Seu robô está no cenário visível abaixo:
 
-    roslaunch my_simulation quarto.launch
+    roslaunch my_simulation pista_oval.launch
 
 
 #### O que é para fazer
@@ -204,7 +201,11 @@ Faça o robô dar uma volta na pista abaixo, parando quando chegar próximo ao i
 
 1. Você pode centralizar o robô na pista tanto usando o ponto de fuga quanto o ponto de cruzamento da  reta central com a linha inferior da imagem.
 
-2. Caso a pista apareça muito curva na imagem e não possa ser bem aproximada por uma reta, você pode usar apenas a porção inferior da mesma para encontrar retas melhores  
+1. Caso você esteja usando o ponto de fuga, e aparecer apenas a reta da esquerda, gire o robô para a direita, e vice-versa.
+
+1. Caso o robô saia da pista, é permitido retorná-lo ao centro da pista no mesmo ponto em que ele saiu. Porém o robô deve demonstrar habilidade em seguir o ponto de fuga ou o ponto de base da reta central (robô fugindo da pista deve ser um caso de exceção)
+
+1. Caso a pista apareça muito curva na imagem e não possa ser bem aproximada por uma reta, você pode usar apenas a porção inferior da mesma para encontrar retas melhores  
 
 Para responder à questão você deverá trabalhar em `p1_221/scripts/q4.py`:
 
@@ -246,7 +247,7 @@ Casos intermediários ou omissos da rubrica serão decididos pelo professor.
 
 Seu robô está no cenário visível abaixo:
 
-    roslaunch my_simulation cubos.launch
+    roslaunch my_simulation encaixotado.launch
 
 
 #### O que é para fazer
