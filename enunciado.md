@@ -50,7 +50,7 @@ Se você tiver alguma evidência de fraude cometida nesta prova, [use este servi
 
 Nesta questão você irá determinar se o personagem do jogo "Deep Space Warriors" foi atingido por um meteoro. Como o jogo possui 3 dimensões, você deverá checar se os retângulos envolventes (*bounding boxes*) do personagem e do meteoro se interceptam, e se a diferença entre as profundidades deles é menor do que 40 cm. Por profundidade de um objeto entende-se a distância do mesmo até a câmera virtual que gera a imagem do jogo.
 
-As imagens `green_lama.png` e `meteoro.png` correspondem às imagens vistas do personagem e do meteoro se ambos estiverem a uma profundidade de 60 cm. A altura do personagem (comprimento na vertical) é de 180 cm, e do meteoro é de 111.3 cm.
+As imagens `green_lama.png` e `meteoro.png` correspondem às imagens vistas do personagem e do meteoro se ambos estiverem a uma profundidade de 60 cm. A altura do personagem (comprimento na vertical) é de 180 cm, e do meteoro é de 98.1 cm.
 
 ![](./q1/green_lama.png)
 ![](./q1/meteoro.png)
