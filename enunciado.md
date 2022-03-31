@@ -83,9 +83,9 @@ Trabalhe no arquivo `./q1/q1.py`. Este exercício **não precisa** de ROS. Porta
 |---|---|
 | Não executa | zero |
 | Determina a distância focal da câmera virtual | 0.6|
-| Segmenta o personagem e o meteoro (separadamente), mostrando eidências | 1.3|
+| Segmenta o personagem e o meteoro (separadamente), mostrando evidências | 1.3|
 | Identifica as profundidades dos objetos e escreve no terminal | 2.1 |
-| Identifica corretamente a collisão entre os objetos | 2.5 |
+| Identifica corretamente a colisão entre os objetos | 2.5 |
 
 
 Casos intermediários ou omissos da rubrica serão decididos pelo professor.
@@ -94,16 +94,12 @@ Casos intermediários ou omissos da rubrica serão decididos pelo professor.
 
 Você deverá desenvolver o código para identificar e desenhar as arestas e os vértices de um quadrado, usando cores diferentes para cada aresta e cada vértice. Quando o quadrado tiver arestas na vertical, não é necessário fazer a identificação.
 
-
 #### Orientações
 
 Trabalhe no arquivo `q2/q2.py`. Este exercício **não precisa** de ROS. Portanto pode ser feito até em Mac ou Windows
 
-Você vai notar que este programa roda o vídeo `quadrado.mp4`. Baixe o vídeo [neste endereço](https://drive.google.com/file/d/10v0lrUtciTE7HNeO2WSE4ug9HafpQvHP/view?usp=sharing), dentro da pasta `q1/`.
-
 
 #### O que você deve fazer:
-
 
 |Resultado| Conceito| 
 |---|---|
@@ -113,17 +109,7 @@ Você vai notar que este programa roda o vídeo `quadrado.mp4`. Baixe o vídeo [
 | Distingue cada uma retas, usando cores diferentes para desenhá-las | 2.0|
 | Apresenta os vértices do quadrado | 2.5 |
 
-
 Casos intermediários ou omissos da rubrica serão decididos pelo professor.
-
-*Exemplo do que deve ser feito*
-
-Exemplo de imagem de entrada
-![](cao_exemplo.png)
-
-Exemplo de imagem de saida
-![](cao_exemplo_detecta.png)
-
 
 ## Questão 3  (2.50 pontos)
 
